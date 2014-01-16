@@ -1,0 +1,174 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "takitapart/normalize";
+@import "takitapart/typography";
+@import "takitapart/grid";
+@import "takitapart/form";
+@import "takitapart/print";
+
+// Base font-size in pixels.
+$font-size: 16;
+
+// Base line-height.
+$line: $font-size * 1.5;
+$em: $font-size * 1;
+
+// Number of columns.
+$columns: 12;
+
+// Width of the outer margin, in percent.
+$outer-margin: 5.55555%;
+
+$header-color: #f6a9a9;
+$content-color: #a9a9f6;
+$nav-color: #cccccc;
+$posts-color: #ac76c3;
+$links-color: #acc376;
+$footer-color: #a9f6a9;
+
+body {
+  @include grid();
+
+  #header {
+    background-color: $header-color;
+    @include column(12);
+  }
+
+  #content {
+    background-color: $content-color;
+    @include column(12);
+  }
+
+  #nav {
+    background-color: $nav-color;
+    @include column(12);
+    padding: 0;
+
+    #posts {
+      background-color: $posts-color;
+      @include column(12,12);
+    }
+
+    #links {
+      background-color: $links-color;
+      @include column(12,12);
+    }
+  }
+
+  #footer {
+    background-color: $footer-color;
+    @include column(12);
+  }
+}
+
+@media screen and (min-width: 32em) {
+
+  body {
+
+    #nav {
+
+      #posts,
+      #links {
+        @include column(6,12);
+      }
+    } 
+  }
+}
+
+@media screen and (min-width: 42em) {
+
+  body {
+
+    #content {
+      @include column(9);
+      float: right;
+    }
+
+    #nav {
+      @include column(3);
+      padding: 0;
+
+      #posts,
+      #links {
+        @include column(3,3);
+      }
+    } 
+  }
+}
+
+@media screen and (min-width: 62em) {
+
+  body {
+
+    #header {
+      @include column(10);
+      @include push(1);
+    }
+
+    #core {
+      @include column(10);
+      @include push(1);
+      padding: 0;
+
+      #content {
+        @include column(7,10);
+        float: right;
+      }
+
+      #nav {
+        @include column(3,10);
+        padding: 0;
+
+        #posts,
+        #links {
+          @include column(3,3);
+        }
+      }
+    }
+
+    #footer {
+      @include column(10);
+      @include push(1);
+    }
+  }
+}
+
+@media screen and (min-width: 70em) {
+  @include baseline-grid(20);
+}
+
+@media screen and (min-width: 80em) {
+  @include baseline-grid(22);
+}
+
+@media screen and (min-width: 90em) {
+  @include baseline-grid(24);
+}
+
+@media screen and (min-width: 100em) {
+  @include baseline-grid(26);
+}
+
+@media screen and (min-width: 110em) {
+  @include baseline-grid(28);
+}
+
+@media screen and (min-width: 120em) {
+  @include baseline-grid(30);
+}
+
+@media screen and (min-width: 130em) {
+  @include baseline-grid(32);
+}
+
+@media screen and (min-width: 140em) {
+  @include baseline-grid(34);
+}
+
+@media screen and (min-width: 150em) {
+  @include baseline-grid(36);
+}
